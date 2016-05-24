@@ -1,63 +1,298 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+
+<head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Bootstrap  練習</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>演習１　bootstrap課題</title>
+  
+  
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  </head>
-  <body>
-    <div id ="header" class="container" style="background:blue;">header</div>
     
-    <div class="container" style="padding:20px 0"
-        <div class="row">
-            <div class="col-sm-4" style="background:gray;">
-            side1
-            <p>ここに文章</p>
-            </div>
-            <div class="col-sm-4 col-xs-5" style="background:green;">
-            side2
-            </div>
-            <div class="col-sm-4 col-xs-7" style="background:orange;">
-            side3
-            </div>
-        </div>
-    </div>
-    <div class="container">   
-    <table class="table table-hover">
-        <thead>
-            <tr><th>ID</th><th>score</th><th>test</th></tr>
-        </thead>
-            <tr class="warning"><td>ken1</td><td>200</td><td>8</td></tr>
-            <tr><td>ken2</td><td>300</td><td>9</td></tr>
-            <tr><td>ken3</td><td>300</td><td>10</td></tr>
-    </table>
-    </div>
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
     
-    <div class="container" style="padding:20px 0">
-        <form class="form-inline">
-          <div class="form-group">
-           <label class="control-label" for="email">email</label>
-           <input type="text" id="email" class="form-control" placeholder="入力">
-          </div>
-          <div class="form-group">
-              <input type="submit" value="送信" class="btn btn-danger"
-          </div>
-        </form>
-    </div>
-    
-    <div class="container" >
-        <div class="jumbotron">
-            <h1>ジャンボトロン設置</h1>
-            <h5>ここに本文を入れる</h5>
-        </div>
-    </div>
-    
-    <div id ="header" class="container" style="background:red;">fooder</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-  </body>
+
+ <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+        google.load("visualization", "1", {packages:["corechart"]}); 
+        google.setOnLoadCallback( 
+                function(){
+                        var data = google.visualization.arrayToDataTable([ 
+                                     [ '', '日本', 'アメリカ', 'イギリス','ドイツ'],
+                                     ['1990年', 2031, 1831, 1765, 1578],
+                                     ['2000年', 1821, 1836, 1700, 1471],
+                                     ['2005年', 1775, 1799, 1673, 1431],
+                                     ['2010年', 1733, 1778, 1652, 1407], 
+                                     ['2011年', 1728, 1787, 1625, 1406], 
+                                     ['2012年', 1745, 1790, 1654, 1397] ]);
+                                  var options = { title: '一人あたり平均年間総労働時間における外国との差', vAxis: {title: '時間'}　 };
+                                  var chart = new google.visualization.ColumnChart(document.getElementById('bouchart')); 
+                                  chart.draw(data, options); } );       
+    </script>
+
+    <script type='text/javascript'>
+        google.load("visualization", "1", {packages:["corechart"]}); 
+        google.setOnLoadCallback( 
+                function(){
+                        var data = google.visualization.arrayToDataTable([
+                                    [ '',  '男性', '女性' ],
+                                    ['1999年', 0.42, 56.4],
+                                    ['2004年', 0.56, 70.6],
+                                    ['2008年', 1.23, 90.6],
+                                    ['2011年', 2.63, 87.8],
+                                    ['2012年', 1.89, 83.6],
+                                    ['2013年', 2.03, 76.3] ]);
+                                var options = { title: '育児休業取得率の推移',vAxis: {title: '%'},  };
+                                var chart = new google.visualization.LineChart(document.getElementById('orechart')); 
+                                  chart.draw(data, options); });
+                    
+        
+                                
+            
+            
+    </script>
+
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy" data offset=70>
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="scrool">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"   href="">最初から</a>
+            </div>
+          
+            <div class="collapse navbar-collapse" id="scrool">
+               <div id="myScrollspy">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#c1">1</a>
+                    </li>
+                    <li>
+                        <a href="#c2">２</a>
+                    </li>
+                    <li>
+                        <a href="#c3">３</a>
+                    </li>
+                    <li>
+                        <a href="#c4">４</a>
+                    </li>
+                    <li>
+                        <a href="#c5">５</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            
+        </div>
+   
+    </nav>
+
+   
+    
+<ul>
+
+
+
+</div>
+   
+    <div class="container">
+
+        
+        <div class="row">
+            <div class="col-lg-12" >
+                <h1 class="page-header">日本が抱える社会問題について
+                    <small>日本のワークライフバランス</small>
+                </h1>
+                <h3>はじめに</h3>
+                <p>    
+                日本では、残業などの長時間労働が慢性化しており、過労死などが問題となっている。
+                また、育休や産休などの取得状況が諸外国と比べて低くなっていると感じる。
+                果たして、日本の労働環境は他の先進国と比べると良い環境なのか？
+                そこで、厚生労働省などの発表するデータをグラフや表にまとめて、日本の労働環境がどのような現状なのかを分析する。
+                その上でこれから働きやすい社会をどのように作っていけばよいのかを考察する。
+                </p>
+            </div>
+        </div>
+        
+        <hr>
+            
+        
+        
+        <div class="row">
+             <div class="col-lg-6" id="c1">
+                <div>
+                   <table class="table table-bordered table-conensed table-hover table-striped">
+                    <thead>
+                        <tr >
+                            <th>年数</th>
+                            <th>過労死件数</th>
+                            <th>過労自殺件数</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                       <tr><td>2000年</td><td align="center">121件</td><td align="center">1781件</td></tr>
+                        <tr><td>2005年</td><td align="center">457件</td><td align="center">1807件</td></tr>
+                        <tr><td>2010年</td><td align="center">593件</td><td align="center">2590件</td></tr>
+                        <tr><td>2011年</td><td align="center">635件</td><td align="center">2689件</td></tr>
+                        <tr><td>2012年</td><td align="center">813件</td><td align="center">2472件</td></tr>
+                        <tr><td>2013年</td><td align="center">742件</td><td align="center">2323件</td></tr>
+                    </tbody>
+                   
+                </table>
+                </div>
+            </div>
+           <div class="col-lg-6">
+                <h3>1.日本の過労死について</h3>
+                <h4>〜過労死と勤務が原因となった自殺件数から〜</h4>
+                <p>過労死は、残業や長時間労働などを強いられることにより、労働者が脳溢血や心臓疾患などにより突然死することや精神を蝕まれ自殺してしまうことである。ここでいう過労自殺は自殺の原因で勤務問題があるとされた自殺件数である。日本はここ数十年で過労死や、過労自殺が大きく増加しており、大きな問題となっている。なお、このデータは労災支給決定件数なので、この数字以上に過労死や過労死や過労自殺があると考えられる。しかし、政府は2014年に過労死等防止対策推進法が制定して、状況の改善への一歩が踏み出された。
+                
+               
+            </div>
+         
+            
+        </div>
+     
+
+        <hr>
+
+    
+        <div class="row">
+            <div class="col-lg-6">
+               <div class="content" id="c2">
+               <div id="orechart" style="width100%; height:300pt"></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3>2.育児休業の取得状況</h3>
+                <h4>〜男性女性の違い〜</h4>
+                <p>育児休業取得率は、配偶者や自らが出産した者のうち育児休業を開始した者を総数で割った割合である。男女では非常に大きな違いがみられる。女性は半数以上が育児休業を取得しているのに対して、男性はたったの数％である。また、女性の育児休業取得率も2008年を最後に減少を続けており、日本で育児休業がしやすい環境とは言いづらい。現状では育児休業を取るとキャリアに影響したり、上司からのパワハラを受けることが問題となっている。また、「イクメン」という言葉が広まりつつあるが、男性が育児休業を取得するという考えがまだ日本企業や労働者に浸透しておらず、育児休業を推進する数少ない企業や公務員などしか取得出来ていない。現在、政府は育児休業を積極的に推進する企業への税制優遇措置や「ファミリ・フレンドリー企業表彰」制度を導入し、育児休業の取得を企業に推奨している。</p>
+                
+            
+            
+            </div>
+        </div>
+     
+       
+        
+                
+        <hr>
+
+
+        <div class="row content">
+            <div class="col-lg-7" id="c3">
+                <div id="bouchart" style="width:100%; height:275pt" ></div> 
+            </div>
+            <div class="col-lg-5">
+                <h3>3.諸外国との比較</h3>
+                <h4>〜OECDの雇用統計から〜</h4>
+                <p>OECDが発表している各国の一人あたり平均年間総労働時間のうち、主要先進国であるアメリカ・イギリス・ドイツのデータを棒グラフ化した。
+1990年は日本が他の先進国（アメリカ・イギリス・ドイツ）よりも圧倒的に労働時間が長く、唯一2000時間を超えている。しかし、その後は日本の一人あたり平均年間総労働時間が減少し、アメリカとほぼ同じ水準となった。2000年以降はアメリカが一番労働時間が長くなっている。それなのに、過労死や過労自殺が増加しているのは働き方に問題があるのではないか？一方ドイツは、常に労働時間が他国よりも少なく、ワークライフバランスが良い。全体的に1990年と比べると労働時間は短くなってきており、世界的にワークライフバランスを意識しているのだと思う。それか、仕事の効率化が進んだのであろう。
+                </p>
+                
+            </div>
+        </div>
+    
+
+        <hr>
+
+       
+        <div class="row">
+            <div class="col-lg-12" id="c4">
+                <h3>4.考察</h3>
+                <h4>日本の労働環境について</h4>
+                <p>まず最初に、自分が最初に想像していたよりも労働時間は長くなかった。過労死や長時間労働を強いるブラック企業などを最近のニュースで見かけるが実際のデータではそこまで長時間労働ではなかった。しかし、これはあくまで平均であり、長時間労働を強いられている労働者は多くいる。日本の労働環境は、終身雇用制度がまだ残っており、諸外国と比べて転職市場が著しく小さい。このことが、労働者が会社にしがみつく原因となり、長時間労働を強いられても辞めにくいのである。また、労働者は会社に尽くすべきだという考えも未だに残っている。この考えが、過労自殺や過労死につながっていると考えられる。また、労働時間の長いアメリカでは、労働契約がはっきりしており、「契約に決めたこと以外はやらなくていい」という考えがあり、ストレスが溜まりにくく、過労死が少ない。</p>
+                <p>育児休業はまだ、だれでも取れる環境とは言いがたく、出産を機に退職せざるを得ないケースがある。また、制度としては育児休業制度を定めている企業でも上司や同僚からの圧力があり、実際に利用することが出来ないケースもある。女性の育児休業取得率は90％以上あるのが理想的で、男性の育児休業取得率も50％程度を目指すべきだ。その為にも、育児休業は悪いことではなくむしろ積極的に利用するべきものであると社会全体で考える必要がある。日本の労働環境は労働者自身の考え方や意識によって悪くなっている面もあると思われる。</p>
+                
+            </div>
+        </div>
+       
+
+        <hr>
+
+        
+        <div class="row">
+         
+            <div class="col-lg-12" id="c5">
+                <h3>5.これからの労働環境</h3>
+                <h4>働きやすい社会を作るために</h4>
+                <p>これまで日本の労働環境についてのデータや海外の労働環境を調べてきた。その上でこれから働く上でどの様な対策を行えばより働きやすい社会を作ることができるのか。労働者や雇用主、政府はすべての人がワークライフバランスを考えて自由に人間らしく働ける社会を作る責任があると思う。実際により働きやすい社会を作るには何が必要なのか。考えたことをいくつかリストアップしてみる。</p>
+                <h4>
+                    <ul>
+                        <li>一定時間以上の労働時間を禁止にする
+                        <h5><p>→　長時間労働は過労死などを引き起こす。プライベートと仕事の両方に時間を割けるようにするためには、一定時間以上の労働時間を出来ないようにするように定めるべきだ。これは、ワーク・シェアリングにもつながり、より多くの人が働くことにもつながる</h5></p>
+                        </li>
+                        <li>労働者の権利や育児休業などの制度の普及や意識改革</li>
+                        <h5>→　労働者が不利益を被った時にはどうすればいいのか、泣き寝入りを防ぐためにも労働者自身が制度や法律を知るべきである。また、自分の会社に育児休業制度があり、どの様に使うのかを会社もアナウンスをするべきである。</h5>
+                        <li>懲罰的損害賠償の導入</li>
+                        <h5>→　アメリカでは、裁判の時に懲罰的損害賠償という本来の賠償金に更に上乗せされる懲らしめのような金額がある。日本もこうした制度を導入し、ブラック企業とよばれる企業への抑止力として活用するべきである。</h5>
+                    </ul>
+                </h4>
+                <p>上記のようなこと行うべきだと考える。日本は企業のほうが労働者のよりも強い立場にある。だからこそサービス残業や育児休業取得率の低迷などが発生してしまう。そこで、企業と労働者の立場は対等であり、労働者にも権利があることを社会全体で認識する必要がある。</p>
+               
+            </div>
+        </div>
+     
+
+        <hr>
+    </div>
+    
+    
+   
+    
+    <div class="row">
+       <div class="container">
+        <div class="col-md-5" >
+            <p>意見をどうぞ</p>
+        <form class="form">
+        
+            <div class="form-group">
+                <label class="control-label">名前</label>
+                <input type="text" class="form-control" placeholder="表示される名前" />
+            </div>
+        
+            <div class="form-group">
+                <label class="control-label">テキスト入力</label>
+                <textarea class="form-control" placeholder="コメントはこちら"></textarea>
+            </div>
+            <button class="btn btn-primary">送信</button>    
+         </div>
+        </div>    
+    </div>
+    
+    <hr>
+    
+    <div id ="header" class="container" >
+        <h3>参考サイト</h3>
+        <h4><a href="http://dotinstall.com/lessons/basic_twitter_bootstrap_v4">ドットインストール</a></h4>　
+        <h4><a href="http://www.jil.go.jp/index.html">独立行政法人 労働政策研究・研修機構</a></h4>　
+        <h4><a href="http://www.oecd.org/tokyo/statistics/">OECD日本サイト</a></h4>
+        <h4><a href="http://www.mhlw.go.jp/"> 厚生労働省</a></h4>
+    </div>
+    
+    <hr>
+    
+    <div Align ="right">
+        <div  class="container">
+            <h5><p>133233 渡辺健太</p></h5>    
+        </div>
+    </div>
+ 
+</body>
+
 </html>
