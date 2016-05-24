@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Bootstrap  練習</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id ="header" class="container" style="background:blue;">header</div>
+    
+    <div class="container" style="padding:20px 0"
+        <div class="row">
+            <div class="col-sm-4" style="background:gray;">
+            side1
+            <p>ここに文章</p>
+            </div>
+            <div class="col-sm-4 col-xs-5" style="background:green;">
+            side2
+            </div>
+            <div class="col-sm-4 col-xs-7" style="background:orange;">
+            side3
+            </div>
+        </div>
+    </div>
+    <div class="container">   
+    <table class="table table-hover">
+        <thead>
+            <tr><th>ID</th><th>score</th><th>test</th></tr>
+        </thead>
+            <tr class="warning"><td>ken1</td><td>200</td><td>8</td></tr>
+            <tr><td>ken2</td><td>300</td><td>9</td></tr>
+            <tr><td>ken3</td><td>300</td><td>10</td></tr>
+    </table>
+    </div>
+    
+    <div class="container" style="padding:20px 0">
+        <form class="form-inline">
+          <div class="form-group">
+           <label class="control-label" for="email">email</label>
+           <input type="text" id="email" class="form-control" placeholder="入力">
+          </div>
+          <div class="form-group">
+              <input type="submit" value="送信" class="btn btn-danger"
+          </div>
+        </form>
+    </div>
+    
+    <div class="container" >
+        <div class="jumbotron">
+            <h1>ジャンボトロン設置</h1>
+            <h5>ここに本文を入れる</h5>
+        </div>
+    </div>
+    
+    <div id ="header" class="container" style="background:red;">fooder</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
