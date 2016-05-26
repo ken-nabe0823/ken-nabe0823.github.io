@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>演習</title>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+        google.load("visualization", "1", {packages:["corechart"]}); 
+        google.setOnLoadCallback(drawSheetName);
+            
+               function drawSheetName() {
+                    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1FXgEWL_CDhK3wPCff2mIVJ-2YtzteD-KNp1gEmqLq-I/gviz/tq? &range=A1:B3' );
+                   
+                   <!-- 指定したスプレッドシートからグラフに使うデータを呼びこむ。スプレッドシート内のどこのセルからデータを持ってくるかもURLで指定する -->
+                
+                       query.send(handleSampleDataQueryResponse);
+                   
+                   <!-- queryで持ってきたデータを「response」というテーブルに送る -->
+                }       
+            
+                function handleSampleDataQueryResponse(response) 
+                    <!-- 「handleSampleDataQueryResponse」という関数を「response」という値で実行する -->
+                {
+                    if (response.isError()) {
+                        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                    return;
+                    }
+                    <!-- エラーによりスプレッドシートからデータを得ることが出来なかった場合のエラー処理 -->
+            
+                    var options = {
+                    title: '大学の数(2014年現在)' 
+                    }
+                    var data = response.getDataTable();
+                    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                }
+            
+    </script>
+    
+</head>
+<body>
+
+<div id='chart_div'　style="width:100%; height:400pt" ></div>
+</body>
+</html>
