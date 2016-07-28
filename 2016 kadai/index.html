@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <title>演習</title>
+  
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.smooth-scroll.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    
+    
+    
+    
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+        google.load("visualization", "1", {packages:["corechart"]}); 
+        google.setOnLoadCallback(drawSheetName);
+            
+               function drawSheetName() {
+                    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1FXgEWL_CDhK3wPCff2mIVJ-2YtzteD-KNp1gEmqLq-I/gviz/tq? &range=A1:B3' );
+                   
+                   <!-- 指定したスプレッドシートからグラフに使うデータを呼びこむ。スプレッドシート内のどこのセルからデータを持ってくるかもURLで指定する -->
+                
+                       query.send(handleSampleDataQueryResponse);
+                   
+                   <!-- queryで持ってきたデータを「response」というテーブルに送る -->
+                }       
+            
+                function handleSampleDataQueryResponse(response) 
+                    <!-- 「handleSampleDataQueryResponse」という関数を「response」という値で実行する -->
+                {
+                    if (response.isError()) {
+                        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                    return;
+                    }
+                    <!-- エラーによりスプレッドシートからデータを得ることが出来なかった場合のエラー処理 -->
+            
+                    var options = {
+                    title: '大学の数(2014年現在)' 
+                    }
+                    var data = response.getDataTable();
+                    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                }
+            
+    </script>
+    
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="scrool">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"   href="">最初から</a>
+            </div>
+          
+            <div class="collapse navbar-collapse" id="scrool">
+               <div id="myScrollspy">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#c1">1</a>
+                    </li>
+                    <li>
+                        <a href="#c2">２</a>
+                    </li>
+                    <li>
+                        <a href="#c3">３</a>
+                    </li>
+                    <li>
+                        <a href="#c4">４</a>
+                    </li>
+                    <li>
+                        <a href="#c5">５</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            
+        </div>
+   
+    </nav>
+
+
+<div id='chart_div'　style="width:100%; height:400pt" ></div>
+</body>
+</html>
