@@ -29,31 +29,21 @@
             
                function drawSheetName() {
                     var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1FXgEWL_CDhK3wPCff2mIVJ-2YtzteD-KNp1gEmqLq-I/gviz/tq? &range=A5:B9' );
-                   
-                   <!-- 指定したスプレッドシートからグラフに使うデータを呼びこむ。スプレッドシート内のどこのセルからデータを持ってくるかもURLで指定する -->
-                
                        query.send(handleSampleDataQueryResponse);
-                   
-                   <!-- queryで持ってきたデータを「response」というテーブルに送る -->
                 }       
             
                 function handleSampleDataQueryResponse(response) 
-                    <!-- 「handleSampleDataQueryResponse」という関数を「response」という値で実行する -->
                 {
                     if (response.isError()) {
                         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
                     return;
                     }
-                    <!-- エラーによりスプレッドシートからデータを得ることが出来なかった場合のエラー処理 -->
-            
                     var options = {title: '平成27年交通事故負傷者数の状況'
-
                     }
                     var data = response.getDataTable();
                     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
                     chart.draw(data, options);
                 }
-            
     </script>
     
 </head>
@@ -73,37 +63,30 @@
             <div class="collapse navbar-collapse" id="scrool">
                <div id="myScrollspy">
                 <ul class="nav navbar-nav">
-                    <li class="active">
+                    <li>
                         <a href="#c1">交通事故発生件数と死者・負傷者数</a>
                     </li>
                     <li>
-                        <a href="#c2">死者・負傷者数</a>
+                        <a href="#c2">事故の発生状況</a>
                     </li>
                     <li>
-                        <a href="#c3">事故類型</a>
-                    </li>
-                    <li>
-                        <a href="#c4">事故の発生状況</a>
-                    </li>
-                    <li>
-                        <a href="#c5">考察</a>
+                        <a href="#c3">考察</a>
                     </li>
                 </ul>
                 </div>
-            </div>
-            
+            </div>  
         </div>
-   
      </nav>
      <hr>
      <hr>
      <hr>
      
      <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" id="c1">
+            <h2>１.近年の交通事故の発生推移</h2>
             <h4>近年の交通事故の発生件数と事故による負傷者と死者の推移をグラフに示す。</h4>
         </div>
-        <div class="col-lg-6" id="c1">
+        <div class="col-lg-6" >
          <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1R4Fc5SZsj6jkjHD04mytWHtfrO5xqAIlG2c0ahqIw5o/pubchart?oid=584345178&amp;format=interactive"></iframe>
          </div>
          <div class="col-lg-6" >
@@ -113,11 +96,8 @@
         
      </div>
     
-    <hr>
-    <hr>
-    <hr>
     <div class="row"　>
-      <div class="col-lg-12" id="c2">
+      <div class="col-lg-12">
         <h4>交通事故減少死者負傷者数は年々減少している。特に死者数は平成17年の6937人から大きく減らして平成27年には4117人と約４割減少している。この要因として警察庁は、
         <br>
         <ul>
@@ -134,15 +114,35 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-lg-6" id="c3">
+        <div class="col-lg-12" id="c2">
+        <h2>2.交通事故の発生場所と発生原因</h2>
+        <h4>平成27年度の交通事故負傷者の状況と交通事故の発生原因を円グラフに示す</h4>    
+        </div>
+        <div class="col-lg-6">
             <div id='chart_div' style="width:80%; height:281pt"></div>
         </div>
         <div class="col-lg-6">
             <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1R4Fc5SZsj6jkjHD04mytWHtfrO5xqAIlG2c0ahqIw5o/pubchart?oid=581871076&amp;format=interactive"></iframe>
         </div>
     </div>
+    <div class="row">
+       <div class="col-lg-12">
+           <h4>
+           交通事故負傷者の多くが自動車（４輪・２輪）で発生している。そして、交通事故の発生原因も多くが安全運転義務違反である。事故を減らすには自動車を運転している人が安全運転を心がけて事故を防ごうと考えることが一番重要である。
+           <br>
+           <i>「安全運転義務」・・・道や交通などの事情に応じ、他人に危害を及ぼさないような速度と方法で運転しなければならない運転者の義務
+           <br>
+           「安全運転義務違反」・・・安全不確認・漫然運転・脇見運転・動静不注視・運転操作不適などの安全な運転を妨げる行為
+           </i>
+           </h4>
+       </div>    
+    </div>
     <hr>
-    
+    <div class="row">
+        <div class="col-lg-12" id="c3">
+            
+        </div>        
+    </div>
     <div id ="header" class="container" >
         <h3>参考・出典サイト</h3>
         <h5><a href="https://www.npa.go.jp/toukei/index.htm">警察庁統計</a></h5>
