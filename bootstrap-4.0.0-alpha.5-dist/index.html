@@ -1,83 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <meta name="description" content="">
     <meta name="author" content="">
-  
+    <link rel="icon" href="../../favicon.ico">
+
     <title>2016年課題 交通事故の分析</title>
-  
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    
-    <link href="css/1-col-portfolio.css" rel="stylesheet">
-    
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.smooth-scroll.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    
-    
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  </head>
 
-    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
-    <script type='text/javascript'>
-        google.load("visualization", "1", {packages:["corechart"]}); 
-        google.setOnLoadCallback(drawSheetName);
-            
-               function drawSheetName() {
-                    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1FXgEWL_CDhK3wPCff2mIVJ-2YtzteD-KNp1gEmqLq-I/gviz/tq? &range=A5:B9' );
-                       query.send(handleSampleDataQueryResponse);
-                }       
-            
-                function handleSampleDataQueryResponse(response) 
-                {
-                    if (response.isError()) {
-                        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                    return;
-                    }
-                    var options = {title: '平成27年交通事故の発生状況'
-                    }
-                    var data = response.getDataTable();
-                    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-                    chart.draw(data, options);
-                }
-    </script>
-    
-</head>
-<body>
+  <body>
 
-     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            
-            <div class="navbar-header" >
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="scrool">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand"   href="">最初から</a>
-            </div>
-          
-            <div class="collapse navbar-collapse" id="scrool">
-               <div id="myScrollspy">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#c1">交通事故発生件数と死者・負傷者数</a>
-                    </li>
-                    <li>
-                        <a href="#c2">事故の発生状況</a>
-                    </li>
-                    <li>
-                        <a href="#c3">交通事故を減らすには</a>
-                    </li>
-                    <li>
-                        <a href="#c4">出典</a>
-                    </li>
-                </ul>
-                </div>
-            </div>  
-        </div>
-     </nav>
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="">最初から</a><span class="sr-only">(current)</span>
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#c1">交通事故発生件数と死者・負傷者数 </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#c2">事故の発生状況</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#c3">交通事故を減らすには</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#c4">出典</a>
+        </li>
+      </ul>
+    </nav>
      <hr>
      <hr>
      <hr>
@@ -85,7 +43,7 @@
      <div class="row">
         <div class="col-lg-12" id="c1">
             <h2>１.近年の交通事故の発生推移</h2>
-            <h4>近年の交通事故の発生件数と事故による負傷者と死者の推移をグラフに示す。</h4>
+            <h5>近年の交通事故の発生件数と事故による負傷者と死者の推移をグラフに示す。</h5>
         </div>
         <div class="col-lg-6" >
         <iframe width="609.7094651019606" height="365.2285429141716" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ4_R0jYtACNpsikXvlJQ5Yh44E9XDfAw5UAO2ZVmWfCIKIdfuNC8jCTbLlvHULOLgKNJ5lNPrHaOq_/pubchart?oid=1913977287&amp;format=interactive"></iframe>
@@ -99,7 +57,7 @@
     
     <div class="row">
       <div class="col-lg-12">
-        <h4>交通事故死者負傷者数は年々減少している。特に死者数は平成17年の6,937人から大きく減らして平成27年には4,117人と約４割減少している。この要因として警察庁は、
+        <h5>交通事故死者負傷者数は年々減少している。特に死者数は平成17年の6,937人から大きく減らして平成27年には4,117人と約４割減少している。この要因として警察庁は、
         <br>
         <ul>
           <li>シートベルト着用率の向上</li>
@@ -109,13 +67,13 @@
           <li>自動車技術の進歩</li>
         </ul> 
         こうした要因を挙げている。            
-        </h4>
+        </h5>
     　</div>   
         <br>
       <div class="col-lg-12">
-            <h4>要因として挙げられていることは正しいか一部(シートベルト着用率・危険運転での検挙数)を抜粋してグラフにまとめる。
+            <h5>要因として挙げられていることは正しいか一部(シートベルト着用率・危険運転での検挙数)を抜粋してグラフにまとめる。
             <br>シートベルト着用率はJAFと警察庁のデータから、飲酒運転は検挙数を警察庁の統計から引用した。
-            </h4>
+            </h5>
       </div>
           <div>
            <div class="col-lg-6">
@@ -125,9 +83,9 @@
                <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1R4Fc5SZsj6jkjHD04mytWHtfrO5xqAIlG2c0ahqIw5o/pubchart?oid=475797235&amp;format=interactive"></iframe>
            </div>
         <div class="col-lg-12">
-            <h4>
+            <h5>
             シートベルト着用率は年々向上し、危険運転での検挙数は減少している。こうした運転意識の上昇や危険運転の減少が交通事故の被害を減らしているといえる。    
-            </h4>
+            </h5>
         </div>
         </div>            
            
@@ -136,7 +94,7 @@
     <div class="row">
         <div class="col-lg-12" id="c2">
         <h2>2.交通事故の発生場所と発生原因</h2>
-        <h4>平成27年度の交通事故負傷者の状況と交通事故の発生原因を円グラフに示す</h4>    
+        <h5>平成27年度の交通事故負傷者の状況と交通事故の発生原因を円グラフに示す</h5>    
         </div>
         <div class="col-lg-6">
             <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ4_R0jYtACNpsikXvlJQ5Yh44E9XDfAw5UAO2ZVmWfCIKIdfuNC8jCTbLlvHULOLgKNJ5lNPrHaOq_/pubchart?oid=1913977287&amp;format=interactive"></iframe>
@@ -148,7 +106,7 @@
     </div>
     <div class="row">
        <div class="col-lg-12">
-           <h4>
+           <h5>
            交通事故負傷者の約75%が自動車（４輪・２輪）で発生している。そして、交通事故の発生原因の多くが安全運転義務違反である。一時不停止や信号無視などの割合は少なく、道路標識等を守っていれば事故は起きないというのは間違いである。
            <br>
            <br>
@@ -156,14 +114,14 @@
            <br>
            「安全運転義務違反」・・・安全不確認・漫然運転・脇見運転・動静不注視・運転操作不適などの安全な運転を妨げる行為
            </i>
-           </h4>
+           </h5>
        </div>    
     </div>
     <hr>
     <div class="row">
         <div class="col-lg-12" id="c3">
             <h2>3.交通事故を減らすには？</h2>
-            <h4>データにもある通り、交通事故の多くは自動車を運転中の不注意や安全確認を怠っているからである。つまり、
+            <h5>データにもある通り、交通事故の多くは自動車を運転中の不注意や安全確認を怠っているからである。つまり、
             <br>
                 <ul>
                     <li>運転手が常に安全運転を意識する</li>
@@ -174,12 +132,20 @@
             自動運転車が普及すれば米国内で交通事故の90%を減らすことが出来るという
             <a href="http://jp.wsj.com/articles/SB11167655035836774773204580501060840882950">試算</a>
             もマッキンゼーが発表している。
-            </h4>
+            </h5>
         </div>        
     </div>
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
     <div class="row">
         <div class="col-lg-12" id="c4">
             <div id ="header">
@@ -191,5 +157,6 @@
             </div>
         </div>
     </div>
-</body>
+ 
+  </body>
 </html>
